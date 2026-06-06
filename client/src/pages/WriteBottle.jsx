@@ -16,7 +16,7 @@ const handleSubmit = async () => {
 
   try {
     const response = await fetch(
-      "https://ocean-backend-cpef.onrender.com/api/bottle",
+      `${import.meta.env.VITE_API_URL}/api/bottle`,
       {
         method: "POST",
         headers: {

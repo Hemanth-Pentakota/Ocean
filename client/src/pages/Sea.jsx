@@ -9,7 +9,7 @@ function Sea() {
   try {
 
     let url =
-      "https://ocean-backend-cpef.onrender.com/api/bottle/random";
+      `${import.meta.env.VITE_API_URL}/api/bottle/random`;
 
     if (bottle?._id) {
       url += `?exclude=${bottle._id}`;
