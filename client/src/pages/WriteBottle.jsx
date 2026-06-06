@@ -16,7 +16,7 @@ const handleSubmit = async () => {
 
   try {
     const response = await fetch(
-      "http://localhost:5000/api/bottle",
+      "https://ocean-backend-cpef.onrender.com/api/bottle",
       {
         method: "POST",
         headers: {

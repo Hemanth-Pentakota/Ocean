@@ -9,7 +9,7 @@ function Sea() {
   try {
 
     let url =
-      "http://localhost:5000/api/bottle/random";
+      "https://ocean-backend-cpef.onrender.com/api/bottle/random";
 
     if (bottle?._id) {
       url += `?exclude=${bottle._id}`;
