@@ -71,6 +71,22 @@ app.get("/api/bottle/random", async (req, res) => {
   }
 });
 
+app.get("/api/bottle/count", async (req, res) => {
+  try {
+    const count = await Bottle.countDocuments();
+
+    res.json({
+      count,
+    });
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      message: "Server Error",
+    });
+  }
+});
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {

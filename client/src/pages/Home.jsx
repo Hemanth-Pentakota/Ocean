@@ -1,8 +1,29 @@
 import { Link } from "react-router-dom";
 
+import { useEffect, useState } from "react";
+
 import Navbar from "../components/Navbar";
 
 function Home() {
+
+  const [bottleCount, setBottleCount] = useState(0);
+
+  const fetchBottleCount = async () => {
+  try {
+    const response = await fetch(
+      `${import.meta.env.VITE_API_URL}/api/bottle/count`
+    );
+
+    const data = await response.json();
+
+    setBottleCount(data.count);
+  } catch (error) {
+    console.error(error);
+  }
+};
+useEffect(() => {
+  fetchBottleCount();
+}, []);
   return (
     <>
     <Navbar/>
@@ -34,12 +55,19 @@ function Home() {
           >
             Go To Sea
           </Link>
+          
 
         </div>
+            <div className="mt-6 text-center">
+  <p className="text-cyan-200 text-lg">
+    🌊 {bottleCount} Bottles Floating In The Ocean
+  </p>
+</div>
 
       </div>
 
     </div>
+
     </>
   );
 }
