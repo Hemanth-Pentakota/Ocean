@@ -26,14 +26,14 @@ function Navbar() {
             to="/write"
             className="text-white hover:text-cyan-300 transition"
           >
-            Throw Bottle
+            Throw
           </Link>
 
           <Link
             to="/sea"
             className="text-white hover:text-cyan-300 transition"
           >
-            Go To Sea
+            Sea
           </Link>
 
         </div>
